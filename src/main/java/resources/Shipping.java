@@ -5,13 +5,15 @@ import values.ItemHandling;
 import java.util.*;
 
 public class Shipping {
-	Item value;
+	Handling handling;
 
-	public void updateHandling(ItemHandling handling) {
-		value = new Item(handling.getName(), handling.getShippingNum());
+	Shipping(Handling argHandling) {
+		this.handling = argHandling;
 	}
 
 	public Item getValue() {
+		ItemHandling itemHandling = handling.getValue();
+		Item value = new Item(itemHandling.getName(), itemHandling.getShippingNum());
 		return value;
 	}
 }

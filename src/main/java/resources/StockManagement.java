@@ -15,8 +15,8 @@ public class StockManagement {
 
 	public StockManagement() {
 		stock = new Stock();
-		shipping = new Shipping();
-		handling = new Handling(stock, shipping);
+		handling = new Handling(stock);
+		shipping = new Shipping(handling);
 		shortage = new Shortage();
 		available = new Available(shortage, handling);
 		arrival = new Arrival(available,stock);
